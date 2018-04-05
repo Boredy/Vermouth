@@ -150,7 +150,7 @@ public class HandPokerTest {
         System.out.println("");
     }
     
-    // Straight: 3 test
+    // Straight: 2 test
     @Test
     public void StraightTest1() {
         System.out.println("Straight");
@@ -178,23 +178,6 @@ public class HandPokerTest {
         hp.AddCard(new Card(eSuit.SPADES,eRank.EIGHT));
         hp.AddCard(new Card(eSuit.CLUBS,eRank.SEVEN));
         hp.AddCard(new Card(eSuit.CLUBS,eRank.SIX));
-        hp.ScoreHand();
-
-        assertEquals(hp.isStraight(), true);
-        
-        System.out.println("");
-    }
-    
-    @Test
-    public void StraightTest3() {
-        System.out.println("Straight");
-        System.out.println("C10 C-J S-Q C-K C-A");
-        HandPoker hp = new HandPoker();
-        hp.AddCard(new Card(eSuit.CLUBS,eRank.TEN));
-        hp.AddCard(new Card(eSuit.CLUBS,eRank.JACK));
-        hp.AddCard(new Card(eSuit.SPADES,eRank.QUEEN));
-        hp.AddCard(new Card(eSuit.CLUBS,eRank.KING));
-        hp.AddCard(new Card(eSuit.CLUBS,eRank.ACE));
         hp.ScoreHand();
 
         assertEquals(hp.isStraight(), true);
