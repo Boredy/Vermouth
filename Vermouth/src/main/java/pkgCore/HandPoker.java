@@ -143,7 +143,7 @@ public class HandPoker extends Hand {
     				int iGetCard = this.getCRC().get(0).getiCardPosition();
     				HSP.setHiCard(this.getCards().get(iGetCard));
     				HSP.setLoCard(this.getCards().get(this.getCRC().get(1).getiCardPosition()));
-    				HSP.setKickers(FindTheKickers(this.getCRC()));
+    				HSP.setKickers(null);
     				this.setHS(HSP);
                     bisFullHouse = true;
                 }
@@ -176,7 +176,7 @@ public class HandPoker extends Hand {
             int iGetCardHi = this.getCRC().get(0).getiCardPosition();
             HSP.setHiCard(this.getCards().get(iGetCardHi));
             HSP.setLoCard(null);
-            HSP.setKickers(FindTheKickers(this.getCRC()));
+            HSP.setKickers(null);
             this.setHS(HSP);
 		    bisFlush = true;
 		}
