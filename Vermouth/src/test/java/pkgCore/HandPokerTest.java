@@ -353,10 +353,20 @@ public class HandPokerTest {
         hp.AddCard(new Card(eSuit.CLUBS,eRank.THREE));
         hp.AddCard(new Card(eSuit.DIAMONDS,eRank.FIVE));
         hp.AddCard(new Card(eSuit.SPADES,eRank.FIVE));
-        hp.ScoreHand();
-        
+        try {
+			hp.ScoreHand();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		HandScorePoker HSP = (HandScorePoker) hp.getHS();        
         assertEquals(hp.isTwoPair(), true);
-        
+        assertEquals(HSP.geteHandStrength(),eHandStrength.TwoPair);
+		assertEquals(HSP.getHiCard().geteRank(), eRank.FIVE);
+		assertEquals(HSP.getKickers().size(), 1);
+		assertEquals(HSP.getKickers().get(0).geteRank(), eRank.TWO);
+		assertEquals(HSP.getKickers().get(0).geteSuit(), eSuit.CLUBS);
+
         System.out.println("");
     }
 
@@ -370,11 +380,21 @@ public class HandPokerTest {
         hp.AddCard(new Card(eSuit.CLUBS,eRank.THREE));
         hp.AddCard(new Card(eSuit.DIAMONDS,eRank.FIVE));
         hp.AddCard(new Card(eSuit.SPADES,eRank.FIVE));
-        hp.ScoreHand();
-        
+        try {
+			hp.ScoreHand();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        HandScorePoker HSP = (HandScorePoker) hp.getHS(); 
         assertEquals(hp.isTwoPair(), true);
-        
+        assertEquals(HSP.geteHandStrength(),eHandStrength.TwoPair);
+		assertEquals(HSP.getHiCard().geteRank(), eRank.FIVE);
+		assertEquals(HSP.getKickers().size(), 1);
+		assertEquals(HSP.getKickers().get(0).geteRank(), eRank.THREE);
+		assertEquals(HSP.getKickers().get(0).geteSuit(), eSuit.CLUBS);
+
         System.out.println("");
+
     }
 
     @Test
@@ -387,8 +407,13 @@ public class HandPokerTest {
         hp.AddCard(new Card(eSuit.CLUBS,eRank.THREE));
         hp.AddCard(new Card(eSuit.DIAMONDS,eRank.THREE));
         hp.AddCard(new Card(eSuit.SPADES,eRank.FIVE));
-        hp.ScoreHand();
-        
+        try {
+			hp.ScoreHand();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		HandScorePoker HSP = (HandScorePoker) hp.getHS();        
         assertEquals(hp.isTwoPair(), true);
         
         System.out.println("");
@@ -405,8 +430,13 @@ public class HandPokerTest {
         hp.AddCard(new Card(eSuit.CLUBS,eRank.THREE));
         hp.AddCard(new Card(eSuit.DIAMONDS,eRank.FOUR));
         hp.AddCard(new Card(eSuit.SPADES,eRank.FIVE));
-        hp.ScoreHand();
-        
+        try {
+			hp.ScoreHand();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		HandScorePoker HSP = (HandScorePoker) hp.getHS();        
         assertEquals(hp.isPair(), true);
         
         System.out.println("");
@@ -422,8 +452,13 @@ public class HandPokerTest {
         hp.AddCard(new Card(eSuit.CLUBS,eRank.THREE));
         hp.AddCard(new Card(eSuit.DIAMONDS,eRank.FOUR));
         hp.AddCard(new Card(eSuit.SPADES,eRank.FIVE));
-        hp.ScoreHand();
-        
+        try {
+			hp.ScoreHand();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		HandScorePoker HSP = (HandScorePoker) hp.getHS();        
         assertEquals(hp.isPair(), true);
         
         System.out.println("");
@@ -439,8 +474,13 @@ public class HandPokerTest {
         hp.AddCard(new Card(eSuit.HEARTS,eRank.FOUR));
         hp.AddCard(new Card(eSuit.DIAMONDS,eRank.FOUR));
         hp.AddCard(new Card(eSuit.SPADES,eRank.FIVE));
-        hp.ScoreHand();
-        
+        try {
+			hp.ScoreHand();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		HandScorePoker HSP = (HandScorePoker) hp.getHS();        
         assertEquals(hp.isPair(), true);
         
         System.out.println("");
@@ -456,8 +496,13 @@ public class HandPokerTest {
         hp.AddCard(new Card(eSuit.DIAMONDS,eRank.FOUR));
         hp.AddCard(new Card(eSuit.HEARTS,eRank.FIVE));
         hp.AddCard(new Card(eSuit.SPADES,eRank.FIVE));
-        hp.ScoreHand();
-        
+        try {
+			hp.ScoreHand();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		HandScorePoker HSP = (HandScorePoker) hp.getHS();        
         assertEquals(hp.isPair(), true);
         
         System.out.println("");
@@ -474,8 +519,13 @@ public class HandPokerTest {
         hp.AddCard(new Card(eSuit.DIAMONDS,eRank.FIVE));
         hp.AddCard(new Card(eSuit.HEARTS,eRank.SEVEN));
         hp.AddCard(new Card(eSuit.SPADES,eRank.EIGHT));
-        hp.ScoreHand();
-        
+        try {
+			hp.ScoreHand();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		HandScorePoker HSP = (HandScorePoker) hp.getHS();        
         assertEquals(hp.isHighCard(), true);
         
         System.out.println("");
